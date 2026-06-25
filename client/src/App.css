@@ -1,0 +1,1137 @@
+/* =====================================
+   GOOGLE FONT
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.85)
+  ),
+  url("https://images.unsplash.com/photo-1622597467836-f3285f2131b7?auto=format&fit=crop&w=1600&q=80");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:15px 30px;
+
+  backdrop-filter:blur(12px);
+
+  background:rgba(255,255,255,0.7);
+
+  box-shadow:
+  0 8px 32px rgba(0,0,0,0.08);
+}
+
+.logo{
+  width:110px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.logo:hover{
+  transform:scale(1.05);
+}
+
+.nav-links{
+  display:flex;
+  gap:12px;
+}
+
+.nav-links button{
+  padding:10px 18px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff9800,
+    #ff5722
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.nav-links button:hover{
+  transform:translateY(-3px);
+}
+
+/* =====================================
+   HOME PAGE
+===================================== */
+
+.home-container{
+  padding:30px;
+}
+
+.home-container h1{
+  text-align:center;
+
+  font-size:42px;
+
+  color:#ff5722;
+
+  margin-bottom:20px;
+
+  text-shadow:
+  2px 2px 10px rgba(0,0,0,.1);
+}
+
+.top-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.top-buttons button{
+  padding:12px 22px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #00c853,
+    #009624
+  );
+
+  color:white;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.top-buttons button:hover{
+  transform:translateY(-4px);
+}
+
+/* =====================================
+   CATEGORY BUTTONS
+===================================== */
+
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+
+  margin-bottom:30px;
+}
+
+.categories button{
+  padding:12px 18px;
+
+  border:none;
+
+  border-radius:50px;
+
+  color:white;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff9800,
+    #ff5722
+  );
+
+  transition:.3s;
+}
+
+.categories button:hover{
+  transform:translateY(-4px);
+}
+
+/* =====================================
+   PRODUCT GRID
+===================================== */
+
+.products-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fill,minmax(260px,1fr));
+
+  gap:25px;
+}
+
+.product-card{
+  overflow:hidden;
+
+  border-radius:25px;
+
+  background:
+  rgba(255,255,255,.75);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.08);
+
+  transition:.4s;
+}
+
+.product-card:hover{
+  transform:
+  translateY(-8px)
+  scale(1.02);
+}
+
+.product-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.product-card h3{
+  margin-top:12px;
+  text-align:center;
+}
+
+.product-card p{
+  text-align:center;
+  color:#00a152;
+  font-weight:700;
+  font-size:20px;
+}
+
+.product-card button{
+  display:block;
+
+  margin:15px auto;
+
+  padding:10px 22px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #00c853,
+    #009624
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+/* =====================================
+   CART
+===================================== */
+
+.cart-section{
+  margin-top:40px;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,.8);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.08);
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:12px;
+}
+
+.qty-btn{
+  width:35px;
+  height:35px;
+
+  border:none;
+
+  border-radius:50%;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.plus-btn{
+  background:#00c853;
+}
+
+.minus-btn{
+  background:#ff1744;
+}
+
+.billing-btn{
+  width:100%;
+
+  margin-top:20px;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #3f51b5,
+    #2196f3
+  );
+
+  color:white;
+
+  font-size:17px;
+
+  cursor:pointer;
+}
+
+/* =====================================
+   BILLING PAGE
+===================================== */
+
+.billing-container{
+  max-width:950px;
+
+  margin:30px auto;
+
+  padding:25px;
+
+  background:
+  rgba(255,255,255,.75);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:25px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.08);
+}
+
+.billing-container h1{
+  text-align:center;
+  margin-bottom:25px;
+  color:#ff5722;
+}
+
+.billing-container input{
+  width:100%;
+
+  padding:14px;
+
+  margin-bottom:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#f3f4f6;
+}
+
+.order-summary{
+  margin-top:25px;
+}
+
+.order-item{
+  display:flex;
+  justify-content:space-between;
+
+  padding:12px 0;
+
+  border-bottom:
+  1px solid #ddd;
+}
+
+.total{
+  margin-top:20px;
+
+  text-align:right;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  color:#00a152;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.btn{
+  border:none;
+  cursor:pointer;
+
+  padding:12px 22px;
+
+  border-radius:30px;
+
+  color:white;
+
+  font-weight:600;
+}
+
+.btn-home{
+  background:
+  linear-gradient(
+    135deg,
+    #2196f3,
+    #3f51b5
+  );
+}
+
+.btn-whatsapp{
+  background:
+  linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
+}
+
+.btn-danger{
+  background:
+  linear-gradient(
+    135deg,
+    #ff1744,
+    #d50000
+  );
+}
+
+/* =====================================
+   LOGIN & REGISTER
+===================================== */
+
+.login-container{
+  width:450px;
+
+  margin:60px auto;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  background:
+  rgba(255,255,255,.8);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.08);
+}
+
+.login-container h2{
+  text-align:center;
+  color:#ff5722;
+  margin-bottom:20px;
+}
+
+.login-container input,
+.login-container select{
+  width:100%;
+
+  padding:14px;
+
+  margin-bottom:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#f3f4f6;
+}
+
+.login-container button{
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff9800,
+    #ff5722
+  );
+
+  color:white;
+
+  font-size:16px;
+
+  cursor:pointer;
+}
+
+/* =========================
+   HISTORY PAGE
+========================= */
+
+.history-container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
+}
+
+.history-container h1{
+  text-align:center;
+  margin-bottom:20px;
+  color:#ff5722;
+}
+
+.history-home-btn{
+  display:block;
+  margin:0 auto 20px;
+
+  padding:12px 25px;
+
+  border:none;
+  border-radius:12px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:bold;
+
+  background:linear-gradient(
+    135deg,
+    #2196f3,
+    #3f51b5
+  );
+}
+
+.history-card{
+  background:white;
+
+  padding:20px;
+
+  margin-bottom:20px;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+  transition:.3s;
+}
+
+.history-card:hover{
+  transform:translateY(-5px);
+}
+
+.history-card h3{
+  color:#ff5722;
+  margin-bottom:10px;
+}
+
+.history-card p{
+  margin:8px 0;
+}
+
+.empty-history{
+  text-align:center;
+
+  padding:40px;
+
+  background:white;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+  font-size:20px;
+
+  color:#666;
+}
+/* ==========================
+   PROFESSIONAL LOGO NAVBAR
+========================== */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:12px 30px;
+
+  background:rgba(255,255,255,0.95);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 2px 15px rgba(0,0,0,0.08);
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo-link{
+  display:flex;
+  align-items:center;
+}
+
+.logo-img{
+  width:180px;
+  height:auto;
+
+  transition:.3s ease;
+}
+
+.logo-img:hover{
+  transform:scale(1.05);
+}
+
+.nav-links{
+  display:flex;
+  gap:12px;
+}
+
+.nav-links button{
+  padding:10px 18px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff9800,
+    #ff5722
+  );
+
+  color:white;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.nav-links button:hover{
+  transform:translateY(-3px);
+}
+/* =========================
+   SELECTED PRODUCTS
+========================= */
+
+.selected-products {
+  margin-top: 30px;
+
+  background: rgba(255,255,255,0.9);
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+}
+
+.selected-products h2 {
+  text-align: center;
+
+  color: #ff5722;
+
+  margin-bottom: 20px;
+}
+
+.selected-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  background: #f8f9fa;
+
+  border-radius: 10px;
+}
+
+.selected-item span {
+  font-weight: 600;
+}
+
+.proceed-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c853,
+      #009624
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.proceed-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   HOME BOTTOM BUTTONS
+========================= */
+
+.home-bottom-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  margin-bottom: 30px;
+}
+
+.home-bottom-buttons button {
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  color: white;
+
+  transition: .3s;
+}
+
+.history-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #2196f3,
+      #3f51b5
+    );
+}
+
+.history-btn:hover {
+  transform: translateY(-3px);
+}
+
+.billing-btn-home {
+  background:
+    linear-gradient(
+      135deg,
+      #ff9800,
+      #ff5722
+    );
+}
+
+.billing-btn-home:hover {
+  transform: translateY(-3px);
+}
+
+/* BILLING EXTRA */
+
+.total-card{
+  margin-top:20px;
+
+  padding:20px;
+
+  text-align:center;
+
+  border-radius:15px;
+
+  background:linear-gradient(
+    135deg,
+    #00c853,
+    #009624
+  );
+
+  color:white;
+}
+
+.billing-buttons{
+  display:flex;
+
+  justify-content:center;
+
+  gap:15px;
+
+  margin-top:25px;
+
+  flex-wrap:wrap;
+}
+
+.home-btn{
+  padding:14px 25px;
+
+  border:none;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:bold;
+
+  background:linear-gradient(
+    135deg,
+    #2196f3,
+    #3f51b5
+  );
+}
+
+.whatsapp-btn{
+  padding:14px 25px;
+
+  border:none;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:bold;
+
+  background:linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
+}
+
+.home-btn:hover,
+.whatsapp-btn:hover{
+  transform:translateY(-3px);
+}
+/* Logout Button */
+
+.logout-btn{
+  padding:10px 18px;
+
+  border:none;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:600;
+
+  background:linear-gradient(
+    135deg,
+    #ff1744,
+    #d50000
+  );
+
+  transition:.3s;
+}
+
+.logout-btn:hover{
+  transform:translateY(-3px);
+}
+
+.login-card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.logo-section{
+  margin-bottom:20px;
+}
+
+.login-logo{
+  width:180px;
+  height:auto;
+}
+
+.login-btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#28a745;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.secondary-btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#ff9800;
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.signup-text{
+  margin-top:15px;
+}
+
+.billing-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:20px;
+}
+
+.home-btn,
+.history-btn,
+.whatsapp-btn{
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.home-btn{
+  background:#2196f3;
+}
+
+.history-btn{
+  background:#ff9800;
+}
+
+.whatsapp-btn{
+  background:#25d366;
+}
+
+.home-btn:hover,
+.history-btn:hover,
+.whatsapp-btn:hover{
+  opacity:0.9;
+}
+
+.history-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.clear-history-btn{
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  background:#e53935;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.clear-history-btn:hover{
+  opacity:.9;
+}
+
+.invoice-container{
+  max-width:900px;
+  margin:30px auto;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.1);
+}
+
+.invoice-header{
+  text-align:center;
+  border-bottom:
+  2px solid #eee;
+  padding-bottom:20px;
+}
+
+.invoice-header h1{
+  color:#28a745;
+}
+
+.invoice-info{
+  margin:20px 0;
+}
+
+.invoice-info p{
+  margin:8px 0;
+}
+
+.invoice-container table{
+  width:100%;
+  border-collapse:
+  collapse;
+}
+
+.invoice-container th,
+.invoice-container td{
+  border:1px solid #ddd;
+  padding:12px;
+  text-align:left;
+}
+
+.invoice-container th{
+  background:#28a745;
+  color:white;
+}
+
+.invoice-page {
+  min-height: 100vh;
+
+  background: #f5f7fa;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 30px;
+}
+
+.invoice-card {
+  width: 900px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.1);
+}
+
+.invoice-card h1 {
+  text-align: center;
+  color: #28a745;
+}
+
+.invoice-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-card table {
+  width: 100%;
+
+  margin-top: 20px;
+
+  border-collapse: collapse;
+}
+
+.invoice-card th,
+.invoice-card td {
+  padding: 12px;
+
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.invoice-card th {
+  background: #28a745;
+  color: white;
+}
+
+.grand-total {
+  text-align: right;
+
+  margin-top: 20px;
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: green;
+}

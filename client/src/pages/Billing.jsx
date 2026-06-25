@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -35,64 +34,64 @@ function Billing() {
         return;
       }
 
-      if (!phone.trim()) {
-        alert("Enter WhatsApp Number");
+      const cleanPhone = phone.replace(/\D/g, "");
+
+      if (!cleanPhone || cleanPhone.length !== 10) {
+        alert("Enter valid 10 digit WhatsApp Number");
         return;
       }
 
       const billData = {
-        customerName,
-        phone,
+        customerName: customerName.trim(),
+        phone: cleanPhone,
         items: cart,
         totalAmount: total,
       };
 
       const response = await axios.post(
-`${import.meta.env.VITE_API_URL}/api/bills`,
-billData
-);
-      const mongoId =
-        response.data.billId;
+        `${import.meta.env.VITE_API_URL}/api/bills/save`,
+        billData
+      );
 
-      const invoiceLink =`https://githubtutte-peach.vercel.app/#/invoice/${mongoId}`;
+      if (!response.data.success) {
+        alert("Invoice Save Failed");
+        console.log(response.data);
+        return;
+      }
+
+      const mongoId = response.data.billId;
+
+      const invoiceLink =
+        `https://githubtutte-peach.vercel.app/#/invoice/${mongoId}`;
 
       const message =
 `Your Invoice is Ready
 
 Please access your invoice using the link below:
 
- ${invoiceLink}
+${invoiceLink}
 
 Thank you for choosing Virudavan Fruit Juice`;
 
       window.open(
-        `https://wa.me/91${phone}?text=${encodeURIComponent(
-          message
-        )}`,
+        `https://wa.me/91${cleanPhone}?text=${encodeURIComponent(message)}`,
         "_blank"
       );
 
       localStorage.removeItem("cart");
 
-      alert(
-        "Invoice Sent Successfully "
-      );
+      alert("Invoice Sent Successfully");
 
       navigate("/history");
-
     } catch (error) {
       console.log(error);
-
-      alert(
-        "Failed To Save Invoice"
-      );
+      alert("Failed To Save Invoice");
     }
   };
 
   return (
     <div className="billing-container">
-
-      <h1> Billing Page</h1>
+      <h1>Billing Page</h1>
 
       <input
         type="text"
@@ -113,23 +112,26 @@ Thank you for choosing Virudavan Fruit Juice`;
       />
 
       <div className="order-summary">
-
         <h2>Order Summary</h2>
 
-        {cart.map((item) => (
-          <div
-            key={item.id}
-            className="order-item"
-          >
-            <span>
-              {item.name} × {item.quantity}
-            </span>
+        {cart.length === 0 ? (
+          <p>No Products Added</p>
+        ) : (
+          cart.map((item) => (
+            <div
+              key={item.id}
+              className="order-item"
+            >
+              <span>
+                {item.name} × {item.quantity}
+              </span>
 
-            <span>
-              ₹{item.price * item.quantity}
-            </span>
-          </div>
-        ))}
+              <span>
+                ₹{item.price * item.quantity}
+              </span>
+            </div>
+          ))
+        )}
 
         <h2>Total: ₹{total}</h2>
 
@@ -148,7 +150,6 @@ Thank you for choosing Virudavan Fruit Juice`;
         >
           Back To Home
         </button>
-
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 function Billing() {
   const navigate = useNavigate();
@@ -90,6 +91,9 @@ Thank you for choosing Virudavan Fruit Juice`;
   };
 
   return (
+    <>
+    <Navbar />
+    
     <div className="billing-container">
       <h1>Billing Page</h1>
 
@@ -152,6 +156,8 @@ Thank you for choosing Virudavan Fruit Juice`;
         </button>
       </div>
     </div>
+    </>
+    
   );
 }
 

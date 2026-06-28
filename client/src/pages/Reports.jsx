@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
+import Navbar from "../components/Navbar";
 
 function Reports() {
   const [bills, setBills] = useState([]);
@@ -85,6 +86,8 @@ function Reports() {
   const monthly = calculateReport(monthlyBills);
 
   return (
+    <>
+    <Navbar />
     <div className="reports-page">
       <h1>Reports Dashboard</h1>
 
@@ -108,6 +111,7 @@ function Reports() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

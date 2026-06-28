@@ -1,127 +1,78 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Navbar from "../components/Navbar";
 import "../App.css";
 
 function History() {
-  const navigate = useNavigate();
-
   const [bills, setBills] = useState([]);
 
-  // Login Protection
-  useEffect(() => {
-    const isLoggedIn =
-      localStorage.getItem("isLoggedIn");
-
-    if (isLoggedIn !== "true") {
-      navigate("/");
-    }
-  }, [navigate]);
-
-  // Load Billing History
-  useEffect(() => {
-    const savedBills =
-      JSON.parse(
-        localStorage.getItem(
-          "billingHistory"
-        )
-      ) || [];
-
-    setBills(savedBills);
-  }, []);
-
-  // Delete All History
-  const clearHistory = () => {
-    const confirmDelete =
-      window.confirm(
-        "Delete all billing history?"
+  const getBills = async () => {
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/bills`
       );
 
-    if (confirmDelete) {
-      localStorage.removeItem(
-        "billingHistory"
-      );
-
-      setBills([]);
+      if (res.data.success) {
+        setBills(res.data.bills);
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Failed To Load History");
     }
   };
+
+  useEffect(() => {
+    getBills();
+  }, []);
 
   return (
     <>
       <Navbar />
 
       <div className="history-container">
-
-        <h1>📋 Billing History</h1>
-
-        <div className="history-buttons">
-
-          <Link to="/home">
-            <button className="history-home-btn">
-              🏠 Back To Home
-            </button>
-          </Link>
-
-          {bills.length > 0 && (
-            <button
-              className="clear-history-btn"
-              onClick={clearHistory}
-            >
-              🗑 Clear History
-            </button>
-          )}
-
-        </div>
+        <h1>Billing History</h1>
 
         {bills.length === 0 ? (
-          <div className="empty-history">
-            <h2>No Bills Found</h2>
-          </div>
+          <h2>No Bills Found</h2>
         ) : (
           bills.map((bill) => (
             <div
               className="history-card"
-              key={bill.id}
+              key={bill._id}
             >
-              <h3>
-                👤 {bill.customerName}
-              </h3>
+              <h2>👤 {bill.customerName}</h2>
+
+              <p>📞 Phone: {bill.phone}</p>
 
               <p>
-                📞 Phone:
-                {" "}
-                {bill.phone}
+                💰 Total: ₹
+                {bill.totalAmount}
               </p>
 
               <p>
-                💰 Total:
-                {" "}
-                ₹{bill.totalAmount}
+                🧾 Bill No: {bill._id}
               </p>
 
               <p>
-                📅 Date:
-                {" "}
-                {bill.date}
+                🗓 Date:{" "}
+                {new Date(
+                  bill.createdAt
+                ).toLocaleString()}
               </p>
 
               <hr />
 
-              <h4>Products</h4>
+              <h3>Products</h3>
 
-              {bill.items.map(
-                (item, index) => (
-                  <p key={index}>
-                    🍹 {item.name}
-                    {" × "}
-                    {item.quantity}
-                  </p>
-                )
-              )}
+              {bill.items.map((item, index) => (
+                <p key={index}>
+                  🍹 {item.name} ×{" "}
+                  {item.quantity}
+                </p>
+              ))}
             </div>
           ))
         )}
-
       </div>
     </>
   );

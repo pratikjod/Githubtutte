@@ -3,9 +3,7 @@ const router = express.Router();
 
 const Bill = require("../models/Bill");
 
-// =========================
 // SAVE BILL
-// =========================
 router.post("/save", async (req, res) => {
   try {
     const bill = await Bill.create(req.body);
@@ -15,8 +13,6 @@ router.post("/save", async (req, res) => {
       billId: bill._id,
     });
   } catch (error) {
-    console.log(error);
-
     res.status(500).json({
       success: false,
       message: error.message,
@@ -24,9 +20,7 @@ router.post("/save", async (req, res) => {
   }
 });
 
-// =========================
-// GET ALL BILLS
-// =========================
+// GET ALL BILLS - History साठी
 router.get("/", async (req, res) => {
   try {
     const bills = await Bill.find().sort({
@@ -38,8 +32,6 @@ router.get("/", async (req, res) => {
       bills,
     });
   } catch (error) {
-    console.log(error);
-
     res.status(500).json({
       success: false,
       message: error.message,
@@ -47,13 +39,9 @@ router.get("/", async (req, res) => {
   }
 });
 
-// =========================
-// GET SINGLE BILL
-// =========================
+// GET SINGLE BILL - Invoice Page साठी
 router.get("/:id", async (req, res) => {
   try {
-    console.log("Invoice ID:", req.params.id);
-
     const bill = await Bill.findById(req.params.id);
 
     if (!bill) {
@@ -68,8 +56,6 @@ router.get("/:id", async (req, res) => {
       bill,
     });
   } catch (error) {
-    console.log(error);
-
     res.status(500).json({
       success: false,
       message: error.message,

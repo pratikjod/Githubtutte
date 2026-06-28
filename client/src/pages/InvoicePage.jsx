@@ -32,7 +32,7 @@ const sgst = +(subTotal * 0.025).toFixed(2);
 
 const cgst = +(subTotal * 0.025).toFixed(2);
 
-const discount = 0;
+const discount = +(5).toFixed(2);
 
 const grandTotal =
 subTotal + sgst + cgst - discount;

@@ -12,6 +12,7 @@ import History from "./pages/History";
 import InvoicePage from "./pages/InvoicePage";
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import Reports from "./pages/Reports";
 
 function RoutesFile() {
   return (
@@ -61,6 +62,15 @@ function RoutesFile() {
         }
       />
 
+      <Route
+        path="/reports"
+        element={
+          <ProtectedRoute>
+            <Reports />
+          </ProtectedRoute>
+        }
+      />
+
       {/* Invoice Route */}
       <Route
         path="/invoice/:id"
@@ -68,6 +78,7 @@ function RoutesFile() {
       />
 
     </Routes>
+    
   );
 }
 

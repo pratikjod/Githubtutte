@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import products from "../data/products";
 import "../App.css";
 import Navbar from "../components/Navbar";
+import logo from "../assets/logo.jpeg";
 
 function Home() {
   const navigate = useNavigate();

@@ -1276,3 +1276,37 @@ text-align:center;
 margin-top:30px;
 font-weight:bold;
 }
+.reports-page {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+.reports-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.report-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.report-card h2 {
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.report-card p {
+  font-size: 18px;
+  margin: 12px 0;
+}

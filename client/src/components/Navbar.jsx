@@ -41,6 +41,12 @@ function Navbar() {
         </button>
 
         <button
+  onClick={() => navigate("/reports")}
+>
+  Reports
+</button>
+
+        <button
           className="logout-btn"
           onClick={logout}
         >

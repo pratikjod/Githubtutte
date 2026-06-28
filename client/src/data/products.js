@@ -6,6 +6,7 @@ const products = [
     name: "Mango Juice",
     category: "Fruit Juice",
     price: 80,
+    costPrice: 45,
     image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4",
   },
 
@@ -14,6 +15,7 @@ const products = [
     name: "Orange Juice",
     category: "Fruit Juice",
     price: 70,
+     costPrice: 48,
     image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba",
   },
 
@@ -22,6 +24,7 @@ const products = [
     name: "Mosambi Juice",
     category: "Fruit Juice",
     price: 90,
+    costPrice: 50,
     image: "https://images.unsplash.com/photo-1613478223719-2ab802602423",
   },
 
@@ -30,6 +33,7 @@ const products = [
     name: "Watermelon Juice",
     category: "Fruit Juice",
     price: 60,
+     costPrice: 45,
     image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b",
   },
 
@@ -40,6 +44,7 @@ const products = [
     name: "Chocolate Milkshake",
     category: "Milkshake",
     price: 120,
+    costPrice: 70,
     image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc",
   },
 
@@ -48,6 +53,7 @@ const products = [
     name: "Banana Milkshake",
     category: "Milkshake",
     price: 90,
+    costPrice: 50,
     image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699",
   },
 
@@ -56,6 +62,7 @@ const products = [
     name: "Oreo Milkshake",
     category: "Milkshake",
     price: 130,
+    costPrice: 80,
     image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb",
   },
 
@@ -66,6 +73,7 @@ const products = [
     name: "Mango Mastani",
     category: "Mastani",
     price: 150,
+    costPrice: 90,
     image: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8",
   },
 
@@ -74,6 +82,7 @@ const products = [
     name: "Chocolate Mastani",
     category: "Mastani",
     price: 170,
+    costPrice: 100,
     image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371",
   },
 
@@ -82,6 +91,7 @@ const products = [
     name: "Dry Fruit Mastani",
     category: "Mastani",
     price: 190,
+    costPrice: 110,
     image: "https://images.unsplash.com/photo-1579954115563-e72bf1381629",
   },
 
@@ -92,6 +102,7 @@ const products = [
     name: "Coca Cola",
     category: "Soft Drink",
     price: 40,
+     costPrice: 45,
     image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e",
   },
 
@@ -100,6 +111,7 @@ const products = [
     name: "Pepsi",
     category: "Soft Drink",
     price: 40,
+    costPrice: 45,
     image: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a",
   },
 
@@ -108,6 +120,7 @@ const products = [
     name: "Sprite",
     category: "Soft Drink",
     price: 40,
+    costPrice: 45,
     image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330",
   },
 
@@ -118,6 +131,7 @@ const products = [
     name: "Fresh Coconut Water",
     category: "Coconut Water",
     price: 50,
+    costPrice: 40,
     image: "https://images.unsplash.com/photo-1587731556938-38755b4803a6",
   },
 
@@ -128,6 +142,7 @@ const products = [
     name: "Sweet Lemon Juice",
     category: "Lemon Juice",
     price: 60,
+    costPrice: 45,
     image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd",
   },
 
@@ -136,6 +151,7 @@ const products = [
     name: "Salt Lemon Juice",
     category: "Lemon Juice",
     price: 60,
+    costPrice: 45,
     image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd",
   },
 ];

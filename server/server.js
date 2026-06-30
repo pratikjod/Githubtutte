@@ -14,6 +14,13 @@ app.get("/", (req, res) => {
   res.send("Fruit Juice API Running");
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "API working",
+  });
+});
+
 app.use("/api/bills", billRoutes);
 
 mongoose

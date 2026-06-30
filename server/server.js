@@ -14,10 +14,10 @@ app.get("/", (req, res) => {
   res.send("Fruit Juice API Running");
 });
 
-app.get("/api/test", (req, res) => {
+app.get("/api/bills", (req, res) => {
   res.json({
     success: true,
-    message: "API working",
+    message: "Direct bills route working",
   });
 });
 

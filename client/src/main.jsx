@@ -1,9 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-
+import ReactDOM from "react-dom/client";s
 import App from "./App.jsx";
-
 import "./index.css";
+
 
 ReactDOM.createRoot(
   document.getElementById("root")
@@ -12,3 +11,8 @@ ReactDOM.createRoot(
     <App />
   </React.StrictMode>
 );  
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}
